@@ -36,7 +36,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public String getDescription() {
+    public String toString() {
         return "Rectangle (length = " + length + "; width = " + width + ")";
     }
 }

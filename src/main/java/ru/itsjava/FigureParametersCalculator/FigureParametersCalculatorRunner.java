@@ -20,7 +20,7 @@ public class FigureParametersCalculatorRunner {
     public static void printAllDataAboutFigureArray(Figure[] fa){
         for (int i = 0; i < fa.length; i++){
             System.out.printf("%s: Perimeter = %f; Square = %f",
-                    fa[i].getDescription(), fa[i].calcPerimeter(), fa[i].calcSquare());
+                    fa[i].toString(), fa[i].calcPerimeter(), fa[i].calcSquare());
             System.out.println("");
         }
     }

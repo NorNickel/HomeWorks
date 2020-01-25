@@ -47,7 +47,7 @@ public class Triangle extends Figure{
     }
 
     @Override
-    public String getDescription() {
+    public String toString() {
         return "Triangle (side lengths = " + sideOne + "; " + sideTwo + "; " +sideThree + ")";
     }
 }
