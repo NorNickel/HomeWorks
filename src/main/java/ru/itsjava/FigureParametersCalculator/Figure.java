@@ -1,4 +1,7 @@
 package ru.itsjava.FigureParametersCalculator;
 
-public class Figure {
+public abstract class Figure {
+    public abstract double calcPerimeter();
+    public abstract double calcSquare();
+    public abstract String getDescription();
 }
