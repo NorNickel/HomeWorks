@@ -80,7 +80,7 @@ public class Woman extends Person{
 
     @Override
     public int hashCode(){
-        return (10 * (((int) (this.getAge() + 5)) / 10)) +
+        return (10 * ((this.getAge() + 5) / 10)) +
                 (20 * (1 + hairColor)) +
                 (30 * (1 + eyeColor));
     }
