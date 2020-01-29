@@ -4,7 +4,7 @@ public class Train {
     public static void main(String[] args) {
         Person[] peopleArray = getExamplePeopleArray();
         printPeopleArray(peopleArray);
-        equalPersons(peopleArray);
+        matchPersons(peopleArray);
     }
 
     public static void printPeopleArray(Person[] peopleArray){
@@ -39,7 +39,7 @@ public class Train {
         return new Person[]{man1, man2, man3, man4, woman1, woman2, woman3, woman4};
     }
 
-    public static void equalPersons(Person[] peopleArray){
+    public static void matchPersons(Person[] peopleArray){
         System.out.println("Men matching:\n");
 
         System.out.println("Michael and Matthew equal = " + peopleArray[0].equals(peopleArray[2]) +
