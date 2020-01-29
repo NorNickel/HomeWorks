@@ -1,0 +1,7 @@
+# Maven
+.git/
+.idea/
+target/
+/src/test/
+/src/main/resources/
+HomeWorks.iml
