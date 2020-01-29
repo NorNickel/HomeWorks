@@ -49,14 +49,14 @@ public class Woman extends Person{
 
     @Override
     public String toString(){
-        return "Woman, " + super.toString() +
-                "\n Hair color = " + HAIR_COLORS[hairColor] +
+        return "#Woman, " + super.toString() +
+                " , hair color = " + HAIR_COLORS[hairColor] +
                 " , eye color = " + EYE_COLORS[eyeColor] +
                 ((husband != null) ?
-                        "\n She's married. Husband's name = " + husband.getName() :
-                        "\n She's not married") +
-                "\n Power of charm = " + charmPower +
-                ((charmPower > 5) ? " >> be careful" : " >> not dangerous") + ")";
+                        "\n She's married. Husband's name = " + husband.getName() + ".":
+                        "\n She's not married.") +
+                " Power of charm = " + charmPower +
+                ((charmPower > 5) ? " >> be careful" : " >> not dangerous") + ")#\n";
     }
 
     @Override

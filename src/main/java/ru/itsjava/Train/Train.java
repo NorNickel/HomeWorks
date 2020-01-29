@@ -1,5 +1,7 @@
 package ru.itsjava.Train;
 
+import java.util.Arrays;
+
 public class Train {
     public static void main(String[] args) {
         // Create array with persons:
@@ -7,7 +9,7 @@ public class Train {
         // Women: [4] - Sandra, [5] - Emanuele, [6] - Ann, [7] - Ashley}
         Person[] peopleArray = getExamplePeopleArray();
 
-        printPeopleArray(peopleArray);
+        System.out.println(Arrays.toString(peopleArray) + "\n");
 
         // Men matching
         matchPersons(peopleArray[0], peopleArray[2]); // match Michael and Matthew
@@ -21,13 +23,6 @@ public class Train {
 
         // Man and woman matching
         matchPersons(peopleArray[1], peopleArray[7]); // match Ivan and Ashley
-
-    }
-
-    public static void printPeopleArray(Person[] peopleArray){
-        for (int i = 0; i < peopleArray.length; i++){
-            System.out.println("#" + i + ": " + peopleArray[i].toString() + "\n");
-        }
     }
 
     public static Person[] getExamplePeopleArray(){
