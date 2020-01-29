@@ -52,7 +52,7 @@ public class Man extends Person{
     @Override
     public int hashCode(){
         return (10 * ((this.getAge() + 5) / 10)) +
-                (20 * (((int) this.getHeight() + 5) / 10)) +
-                (30 * (((int) this.getWeight() + 5) / 10));
+                (100 * (((int) this.getHeight() + 5) / 10)) +
+                (1000 * (((int) this.getWeight() + 5) / 10));
     }
 }
