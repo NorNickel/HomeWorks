@@ -2,9 +2,26 @@ package ru.itsjava.Train;
 
 public class Train {
     public static void main(String[] args) {
+        // Create array with persons:
+        // {Men: [0] - Michael, [1] - Ivan, [2] - Matthew, [3] - Archibald,
+        // Women: [4] - Sandra, [5] - Emanuele, [6] - Ann, [7] - Ashley}
         Person[] peopleArray = getExamplePeopleArray();
+
         printPeopleArray(peopleArray);
-        matchPersons(peopleArray);
+
+        // Men matching
+        matchPersons(peopleArray[0], peopleArray[2]); // match Michael and Matthew
+        matchPersons(peopleArray[1], peopleArray[3]); // match Ivan and Archibald
+        matchPersons(peopleArray[0], peopleArray[1]); // match Michael and Ivan
+
+        // Women matching
+        matchPersons(peopleArray[6], peopleArray[7]); // match Ann and Ashley
+        matchPersons(peopleArray[5], peopleArray[6]); // match Emanuele and Ann
+        matchPersons(peopleArray[4], peopleArray[6]); // match Sandra and Ann
+
+        // Man and woman matching
+        matchPersons(peopleArray[1], peopleArray[7]); // match Ivan and Ashley
+
     }
 
     public static void printPeopleArray(Person[] peopleArray){
@@ -14,9 +31,6 @@ public class Train {
     }
 
     public static Person[] getExamplePeopleArray(){
-        // return array with persons:
-        // Men: [0] - Michael; [1] - Ivan; [2] - Matthew; [3] - Archibald
-        // Women: [4] - Sandra; [5] - Emanuele; [6] - Ann; [7] - Ashley
 
         Man man1 = new Man("Michael", 28, 179, 87.5, 1100, null);
         Man man2 = new Man("Ivan", 34, 182.5, 100.4, 2500, null);
@@ -39,28 +53,10 @@ public class Train {
         return new Person[]{man1, man2, man3, man4, woman1, woman2, woman3, woman4};
     }
 
-    public static void matchPersons(Person[] peopleArray){
-        System.out.println("Men matching:\n");
-
-        System.out.println("Michael and Matthew equal = " + peopleArray[0].equals(peopleArray[2]) +
-                "; hashCodes (" + peopleArray[0].hashCode() + ":" + peopleArray[2].hashCode() + ")");
-
-        System.out.println("Ivan and Archibald equal = " + peopleArray[1].equals(peopleArray[3]) +
-                "; hashCodes (" + peopleArray[1].hashCode() + ":" + peopleArray[3].hashCode() + ")");
-
-        System.out.println("Michael and Ivan equal = " + peopleArray[0].equals(peopleArray[1]) +
-                "; hashCodes (" + peopleArray[0].hashCode() + ":" + peopleArray[1].hashCode() + ")");;
-
-        System.out.println("Women matching:\n");
-
-        System.out.println("\nAnn and Ashley equal = " + peopleArray[6].equals(peopleArray[7]) +
-                "; hashCodes (" + peopleArray[6].hashCode() + ":" + peopleArray[7].hashCode() + ")");
-
-        System.out.println("Emanuele and Ann equal = " + peopleArray[5].equals(peopleArray[6]) +
-                "; hashCodes (" + peopleArray[5].hashCode() + ":" + peopleArray[6].hashCode() + ")");
-
-        System.out.println("Sandra and Ann equal = " + peopleArray[4].equals(peopleArray[6]) +
-                "; hashCodes (" + peopleArray[4].hashCode() + ":" + peopleArray[6].hashCode() + ")");;
-
+    public static void matchPersons(Person personOne, Person personTwo){
+        System.out.println(personOne.getName() + " and " + personTwo.getName() +
+                " equal = " + personOne.equals(personTwo) +
+                "; hashCodes (" + personOne.hashCode() + ":" + personTwo.hashCode() + ")");
     }
+
 }

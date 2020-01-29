@@ -25,9 +25,9 @@ public class Woman extends Person{
     public Woman(String name, int age, double height, double weight,
                  int hairColor, int eyeColor, int charmPower, Man husband) {
         super(name, age, height, weight);
-        this.charmPower = charmPower;
         this.hairColor = hairColor;
         this.eyeColor = eyeColor;
+        this.charmPower = charmPower;
         this.husband = husband;
     }
 

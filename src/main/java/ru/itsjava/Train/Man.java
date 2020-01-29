@@ -18,8 +18,6 @@ public class Man extends Person{
 
     public void setImpactForce(float impactForce) { this.impactForce = impactForce; }
 
-    public void setImpactForce(double impactForce) { this.impactForce = impactForce; }
-
     public Woman getWife() { return wife; }
 
     public void setWife(Woman wife) { this.wife = wife; }
