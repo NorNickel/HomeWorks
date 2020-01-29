@@ -71,11 +71,11 @@ public class Woman extends Person{
             return false;
         }
         Woman woman = (Woman) o;
-        return (5 > Math.abs(this.getAge() - woman.getAge())) &&
-                this.hairColor == woman.hairColor &&
-                this.eyeColor == woman.eyeColor &&
-                (4 > Math.abs(this.charmPower - woman.charmPower)) &&
-                ((this.husband == null) == (woman.husband == null));
+        return 5 > Math.abs(this.getAge() - woman.getAge()) &&
+               this.hairColor == woman.hairColor &&
+               this.eyeColor == woman.eyeColor &&
+               4 > Math.abs(this.charmPower - woman.charmPower) &&
+               (this.husband == null) == (woman.husband == null);
     }
 
     @Override

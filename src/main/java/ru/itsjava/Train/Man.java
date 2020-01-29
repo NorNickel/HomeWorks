@@ -43,10 +43,10 @@ public class Man extends Person{
             return false;
         }
         Man man = (Man) o;
-        return  6 > Math.abs(this.getAge() - man.getAge()) &&
-                6 > Math.abs(this.getHeight() - man.getHeight()) &&
-                6 > Math.abs(this.getWeight() - man.getWeight()) &&
-                301 > Math.abs(this.impactForce - man.impactForce);
+        return 6 > Math.abs(this.getAge() - man.getAge()) &&
+               6 > Math.abs(this.getHeight() - man.getHeight()) &&
+               6 > Math.abs(this.getWeight() - man.getWeight()) &&
+               301 > Math.abs(this.impactForce - man.impactForce);
     }
 
     @Override
