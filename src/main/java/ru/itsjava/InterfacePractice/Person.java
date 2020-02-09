@@ -11,6 +11,7 @@ public class Person implements Learnable {
 
     public void setName(String name){ this.name = name; }
 
+    @Override
     public void learn(){
         System.out.println("My name is " + name + "and I'm learning now...");
     }
