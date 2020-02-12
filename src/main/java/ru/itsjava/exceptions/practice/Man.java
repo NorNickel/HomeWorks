@@ -1,4 +1,4 @@
-package ru.itsjava.exceptions;
+package ru.itsjava.exceptions.practice;
 
 public class Man {
     private String name;

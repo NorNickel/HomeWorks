@@ -1,4 +1,4 @@
-package ru.itsjava.runtimeexception;
+package ru.itsjava.exceptions.runtimeexception;
 
 public class FamilyHouse {
     public static void main(String[] args) {

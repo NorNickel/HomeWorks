@@ -1,4 +1,4 @@
-package ru.itsjava.exceptions;
+package ru.itsjava.exceptions.practice;
 
 public class ExceptionPractice {
     public static void main(String[] args) {
