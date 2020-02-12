@@ -1,4 +1,4 @@
-package ru.itsjava.CompareToAndClone;
+package ru.itsjava.methods.compare_to_and_clone;
 
     /* Задача: для класса SuperCat реализовать методы compareTo() и clone()
     и отсортировать массив из объектов SuperCat. Часть объектов должно быть

@@ -1,6 +1,4 @@
-package ru.itsjava.ArraysPractice;
-
-import java.util.Arrays;
+package ru.itsjava.arrays.practice;
 
 public class ArraysPracticeRunner {
     public static void main(String[] args) {

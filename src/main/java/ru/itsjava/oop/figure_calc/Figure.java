@@ -1,4 +1,4 @@
-package ru.itsjava.FigureParametersCalculator;
+package ru.itsjava.oop.figure_calc;
 
 public abstract class Figure {
     public abstract double calcPerimeter();

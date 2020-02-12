@@ -1,4 +1,4 @@
-package ru.itsjava.HistLibrary;
+package ru.itsjava.oop.hist_library;
 
 import java.util.Scanner;
 

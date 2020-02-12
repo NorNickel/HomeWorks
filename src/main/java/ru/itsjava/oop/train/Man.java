@@ -1,6 +1,4 @@
-package ru.itsjava.Train;
-
-import java.util.Objects;
+package ru.itsjava.oop.train;
 
 public class Man extends Person{
 

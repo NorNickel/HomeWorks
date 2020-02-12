@@ -1,4 +1,4 @@
-package ru.itsjava.Train;
+package ru.itsjava.oop.train;
 
 public class Person {
 

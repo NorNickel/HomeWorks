@@ -1,4 +1,4 @@
-package ru.itsjava.Train;
+package ru.itsjava.oop.train;
 
 import java.util.Arrays;
 

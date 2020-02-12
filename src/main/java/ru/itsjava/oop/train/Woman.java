@@ -1,6 +1,4 @@
-package ru.itsjava.Train;
-
-import java.util.Objects;
+package ru.itsjava.oop.train;
 
 public class Woman extends Person{
     private static final String[] HAIR_COLORS = new String[]

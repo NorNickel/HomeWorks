@@ -1,4 +1,4 @@
-package ru.itsjava.CompareToAndClone;
+package ru.itsjava.methods.compare_to_and_clone;
 
 public class SuperCat implements Cloneable, Comparable<SuperCat> {
     private String name;

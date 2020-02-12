@@ -1,4 +1,4 @@
-package ru.itsjava.ArraysPractice;
+package ru.itsjava.arrays.practice;
 
 public class ArraysMethods {
     public static final int NOT_FOUND = -1;

@@ -1,4 +1,4 @@
-package ru.itsjava.FigureParametersCalculator;
+package ru.itsjava.oop.figure_calc;
 
 public class Circle extends Figure {
     private double radius;

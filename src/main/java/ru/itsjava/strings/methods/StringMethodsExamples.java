@@ -1,7 +1,7 @@
-package ru.itsjava.StringMethodsPractice;
+package ru.itsjava.strings.methods;
 
-public class StringMethodsRunner {
-    public static void main(String[] args) {
+public class StringMethodsExamples {
+    public static void printSomeMethods(){
         String testString = "Hello, World, World!";
 
         System.out.println("testString = " + testString + "\n");
@@ -106,7 +106,5 @@ public class StringMethodsRunner {
         System.out.println("\"   a bb  ccc   \".trim() = " + "   a bb  ccc   ".trim());
 
         System.out.println("testString.subSequence(3, 8) = " + testString.subSequence(3, 8));
-
     }
-
 }

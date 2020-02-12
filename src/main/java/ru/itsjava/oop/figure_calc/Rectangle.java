@@ -1,4 +1,4 @@
-package ru.itsjava.FigureParametersCalculator;
+package ru.itsjava.oop.figure_calc;
 
 public class Rectangle extends Figure {
     private double length;

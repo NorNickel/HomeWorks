@@ -1,4 +1,4 @@
-package ru.itsjava.InterfacePractice;
+package ru.itsjava.interfaces.practice;
 
 public class Person implements Learnable {
     private String name;
