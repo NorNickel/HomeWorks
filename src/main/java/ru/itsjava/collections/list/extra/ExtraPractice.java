@@ -8,7 +8,7 @@ public class ExtraPractice {
     public static void main(String[] args){
         System.out.println("Дополнительные задачи по теме работа с ArrayList.");
 
-        System.out.println("\n0. Содание списков: (Используя конструктор)");
+        System.out.println("\n0. Создание списков: (Используя конструктор)");
 
         System.out.println("а). Создать пустой список");
         List<Integer> numberList = new ArrayList<>(); // size = 0
