@@ -38,9 +38,7 @@ public class ExtraPractice {
 
         // в) Записать в новый список все элементы предыдущего списка.
         List<Integer> numberListNew = new ArrayList<>();
-        for (int number : numberList){
-            numberListNew.add(number);
-        }
+        numberListNew.addAll(numberList);
 
         // 3. Задачи на удаление элементов: (Используя методы)
         // а) Удалить элемент по значению
@@ -60,7 +58,7 @@ public class ExtraPractice {
         // 6. Отфильтровать список вернуть записи по некоторому условию:
 
         //а) Условие на индекс: Индекс делится на 3
-        
+
 
         // б) Условие на значение: Вернуть количество элементов, которые равны "***"
 

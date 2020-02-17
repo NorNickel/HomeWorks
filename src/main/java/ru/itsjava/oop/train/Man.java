@@ -24,10 +24,9 @@ public class Man extends Person{
     public String toString(){
         return "#Man, " + super.toString() +
                 ((wife != null) ?
-                        "\n He's married. Wife's name = " + wife.getName() + "." :
-                        "\n He isn't married.") +
-                " Impact force = " + impactForce + " kg" +
-                ((impactForce > 500) ? " >> be careful" : " >> he's not dangerous") + ")#\n";
+                        ", wife's name = " + wife.getName() + "." :
+                        ", he isn't married.") +
+                ", impact force = " + impactForce + " kg";
     }
 
     @Override
