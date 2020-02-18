@@ -1,6 +1,6 @@
 package ru.itsjava.collections.list.car_list;
 
-public class Car implements Cloneable, Comparable<Car> {
+public class Car implements Comparable<Car> {
 
     private String name;
     private int year;
