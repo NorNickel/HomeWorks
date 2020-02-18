@@ -56,17 +56,20 @@ public class CarCatalog {
         carList.removeRange(2, 5);
         System.out.println("After deleting range [2..5):\n" + carList.toString());
 
+        carList.removeAll(getRussianCarsCatalog());
+        System.out.println("After deleting all russian cars:\n" + carList.toString());
+
         carList.ensureCapacity(30);
         System.out.println("After ensureCapacity(30):\n" + carList.toString());
 
-        System.out.println("carList.contains(new Car(\"KiaSeed\", 2015)) = " +
-                carList.contains(new Car("KiaSeed", 2015)));
+        System.out.println("carList.contains(new Car(\"Kia Seed\", 2015)) = " +
+                carList.contains(new Car("Kia Seed", 2015)));
 
         System.out.println("carList.indexOf(new Car(\"Kia Seed\", 2015)) = " +
                 carList.indexOf(new Car("Kia Seed", 2015)));
 
-        System.out.println("carList.contains(new Car(\"KiaSeed\", 2016)) = " +
-                carList.contains(new Car("KiaSeed", 2016)));
+        System.out.println("carList.contains(new Car(\"Kia Seed\", 2016)) = " +
+                carList.contains(new Car("Kia Seed", 2016)));
 
         System.out.println("carList.lastIndexOf(new Car(\"Kia Seed\", 2016)) = " +
                 carList.lastIndexOf(new Car("Kia Seed", 2016)));
@@ -82,6 +85,12 @@ public class CarCatalog {
         carList.sort();
         System.out.println("After sorting:\n" + carList.toString());
 
+        System.out.println("carList.isEmpty() = " + carList.isEmpty());
+
+        carList.clear();
+        System.out.println("After clear():\n" + carList.toString());
+
+        System.out.println("carList.isEmpty() = " + carList.isEmpty());
     }
 
 }

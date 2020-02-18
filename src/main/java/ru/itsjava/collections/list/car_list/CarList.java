@@ -2,10 +2,10 @@ package ru.itsjava.collections.list.car_list;
 
 import java.util.*;
 
-public class CarList<T> {
+public class CarList<T>{
     private final int ARRAY_MIN_CAPACITY = 10;
 
-    private Object[] array;
+    private T[] array;
     private int size = 0;
 
     public CarList() {
@@ -13,7 +13,7 @@ public class CarList<T> {
     }
 
     public CarList(int initialLength) {
-        this.array = new Object[initialLength];
+        this.array = (T[]) new Object[initialLength];
     }
 
     public int size() {
@@ -30,21 +30,13 @@ public class CarList<T> {
 
     public void ensureCapacity(int minCapacity) {
         int oldCapacity = array.length;
-        if (oldCapacity > minCapacity){
-            grow(minCapacity);
+        if (oldCapacity < minCapacity){
+            array = grow(minCapacity);
         }
     }
 
     private T[] grow(){
         return grow(getNewLength());
-    }
-
-    private int getNewLength(){
-        return getNewLength(ARRAY_MIN_CAPACITY);
-    }
-
-    private int getNewLength(int minCapacity){
-        return Math.max(array.length * 3 / 2 + 1, minCapacity);
     }
 
     private T[] grow(int minCapacity){
@@ -57,15 +49,23 @@ public class CarList<T> {
         }
     }
 
+    private int getNewLength(){
+        return getNewLength(ARRAY_MIN_CAPACITY);
+    }
+
+    private int getNewLength(int minCapacity){
+        return Math.max(array.length * 3 / 2 + 1, minCapacity);
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
 
-    public boolean contains(Object o) {
+    public boolean contains(T o) {
         return indexOf(o) >= 0;
     }
 
-    public int indexOf(Object o) {
+    public int indexOf(T o) {
         if (o == null){
             for (int i = 0; i < size; i++){
                 if (array[i] == null){
@@ -82,7 +82,7 @@ public class CarList<T> {
         return -1;
     }
 
-    public int lastIndexOf(Object o) {
+    public int lastIndexOf(T o) {
         if (o == null){
             for (int i = size - 1; i >= 0; i--){
                 if (array[i] == null){
@@ -99,26 +99,26 @@ public class CarList<T> {
         return -1;
     }
 
-    public Object[] toArray() {
-        return Arrays.copyOf(array, size);
+    public T[] toArray() {
+        return (T[]) Arrays.copyOf(array, size);
     }
 
-    public Object get(int index) {
+    public T get(int index) {
         return array[index];
     }
 
-    public Object set(int index, Object element) {
-        Object oldValue = array[index];
+    public T set(int index, T element) {
+        T oldValue = array[index];
         array[index] = element;
         return oldValue;
     }
 
-    public boolean add(Object o) {
+    public boolean add(T o) {
         add(size, o);
         return true;
     }
 
-    public void add(int index, Object element) {
+    public void add(int index, T element) {
         if (size == array.length){
             array = grow();
         }
@@ -138,7 +138,7 @@ public class CarList<T> {
         return element;
     }
 
-    public boolean remove(Object o) {
+    public boolean remove(T o) {
         int index = indexOf(o);
         if (index > 0){
             remove(index);
@@ -150,7 +150,7 @@ public class CarList<T> {
     protected void removeRange(int fromIndex, int toIndex) {
         int countElementsRemove = toIndex - fromIndex;
         if (countElementsRemove != 0) {
-            System.arraycopy(array, toIndex, array, fromIndex, countElementsRemove);
+            System.arraycopy(array, toIndex, array, fromIndex, size - countElementsRemove);
             for (int i = size - countElementsRemove; i < size; i++) {
                 array[i] = null;
             }
@@ -158,9 +158,10 @@ public class CarList<T> {
         }
     }
 
-    public boolean removeAll(Collection c) {
-        for (Object element : c){
-            if (this.contains(element)){
+    public boolean removeAll(CarList<T> c) {
+        for (int i = 0; i < c.size(); i++){
+            T element;
+            if (this.contains(element = c.get(i))){
                 remove(element);
             }
         }
@@ -245,11 +246,10 @@ public class CarList<T> {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("{");
         for (int i = 0; i < size; i++){
-            stringBuilder.append("#" + i + ": " + array[i].toString() + ",\n");
+            stringBuilder.append("#" + i + ": " + array[i].toString() +
+                    (i != size - 1 ? ",\n" : ""));
         }
-        stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length());
-        stringBuilder.append("}; size = " + size);
-        stringBuilder.append("; length = " + array.length);
+        stringBuilder.append("} (size = " + size + "; length = " + array.length + ')');
         return stringBuilder.toString();
     }
 
