@@ -183,8 +183,8 @@ public class CarList<T>{
         if (index == this.size){
             System.arraycopy(carList.toArray(), 0, array, size, carList.size());
         } else {
-            System.arraycopy(array, index, array, index + carList.size() - 1, this.size() - index - 1);
-            System.arraycopy(carList.toArray(), 0, array, index, carList.size() - 1);
+            System.arraycopy(array, index, array, index + carList.size(), this.size() - index);
+            System.arraycopy(carList.toArray(), 0, array, index, carList.size());
         }
         size += carList.size();
         return true;

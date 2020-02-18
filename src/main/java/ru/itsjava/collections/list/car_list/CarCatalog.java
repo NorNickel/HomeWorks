@@ -58,6 +58,9 @@ public class CarCatalog {
         carList.ensureCapacity(30);
         System.out.println("After ensureCapacity(30):\n" + carList.toString());
 
+        carList.addAll(3, getRussianCarsCatalog());
+        System.out.println("After russian cars adding from index 3:\n" + carList.toString());
+
         System.out.println("carList.contains(new Car(\"Kia Seed\", 2015)) = " +
                 carList.contains(new Car("Kia Seed", 2015)));
 
