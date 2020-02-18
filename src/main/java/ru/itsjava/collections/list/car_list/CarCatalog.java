@@ -1,9 +1,5 @@
 package ru.itsjava.collections.list.car_list;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-
 public class CarCatalog {
     CarList<Car> carList = new CarList<>();
 

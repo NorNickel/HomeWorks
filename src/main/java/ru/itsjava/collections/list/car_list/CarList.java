@@ -3,17 +3,12 @@ package ru.itsjava.collections.list.car_list;
 import java.util.*;
 
 public class CarList<T>{
-    private final int ARRAY_MIN_CAPACITY = 10;
 
     private T[] array;
     private int size = 0;
 
     public CarList() {
-        this(10);
-    }
-
-    public CarList(int initialLength) {
-        this.array = (T[]) new Object[initialLength];
+        this.array = (T[]) new Object[10];
     }
 
     public int size() {
@@ -43,13 +38,14 @@ public class CarList<T>{
         int oldCapacity = array.length;
         int newCapacity = getNewLength(minCapacity);
         if (oldCapacity > 0){
-            return (T[]) Arrays.copyOf(array, newCapacity);
+            return Arrays.copyOf(array, newCapacity);
         } else {
             return (T[]) new Object[Math.max(newCapacity, newCapacity)];
         }
     }
 
     private int getNewLength(){
+        int ARRAY_MIN_CAPACITY = 10;
         return getNewLength(ARRAY_MIN_CAPACITY);
     }
 
@@ -100,7 +96,7 @@ public class CarList<T>{
     }
 
     public T[] toArray() {
-        return (T[]) Arrays.copyOf(array, size);
+        return Arrays.copyOf(array, size);
     }
 
     public T get(int index) {
@@ -158,10 +154,10 @@ public class CarList<T>{
         }
     }
 
-    public boolean removeAll(CarList<T> c) {
-        for (int i = 0; i < c.size(); i++){
+    public boolean removeAll(CarList<T> carList) {
+        for (int i = 0; i < carList.size(); i++){
             T element;
-            if (this.contains(element = c.get(i))){
+            if (this.contains(element = carList.get(i))){
                 remove(element);
             }
         }
@@ -175,22 +171,22 @@ public class CarList<T>{
         size = 0;
     }
 
-    public boolean addAll(CarList<T> c) {
-        return addAll(size, c);
+    public boolean addAll(CarList<T> carList) {
+        return addAll(size, carList);
     }
 
-    public boolean addAll(int index, CarList<T> c) {
-        int newLength = this.size + c.size();
+    public boolean addAll(int index, CarList<T> carList) {
+        int newLength = this.size + carList.size();
         if (newLength > array.length){
             array = grow(newLength);
         }
         if (index == this.size){
-            System.arraycopy(c.toArray(), 0, array, size, c.size());
+            System.arraycopy(carList.toArray(), 0, array, size, carList.size());
         } else {
-            System.arraycopy(array, index, array, index + c.size() - 1, this.size() - index - 1);
-            System.arraycopy(c.toArray(), 0, array, index, c.size() - 1);
+            System.arraycopy(array, index, array, index + carList.size() - 1, this.size() - index - 1);
+            System.arraycopy(carList.toArray(), 0, array, index, carList.size() - 1);
         }
-        size += c.size();
+        size += carList.size();
         return true;
     }
 
