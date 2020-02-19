@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list_practice;
+package ru.itsjava.collections.list.practice;
 
 import java.util.ArrayList;
 import java.util.List;

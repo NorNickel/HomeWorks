@@ -69,7 +69,7 @@ public class MyArrayList<T> {
                 //break;
             }
             if (indexDeleted != -1 && i != size - 1){
-                
+
             }
         }
         /*if (indexDeleted != -1){
