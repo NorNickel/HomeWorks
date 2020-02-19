@@ -2,12 +2,12 @@ package ru.itsjava.collections.list.car_list;
 
 import java.util.*;
 
-public class CarList<T>{
+public class MyArrayList<T>{
 
     private T[] array;
     private int size = 0;
 
-    public CarList() {
+    public MyArrayList() {
         this.array = (T[]) new Object[10];
     }
 
@@ -154,7 +154,7 @@ public class CarList<T>{
         }
     }
 
-    public boolean removeAll(CarList<T> carList) {
+    public boolean removeAll(MyArrayList<T> carList) {
         for (int i = 0; i < carList.size(); i++){
             T element;
             if (this.contains(element = carList.get(i))){
@@ -171,11 +171,11 @@ public class CarList<T>{
         size = 0;
     }
 
-    public boolean addAll(CarList<T> carList) {
+    public boolean addAll(MyArrayList<T> carList) {
         return addAll(size, carList);
     }
 
-    public boolean addAll(int index, CarList<T> carList) {
+    public boolean addAll(int index, MyArrayList<T> carList) {
         int newLength = this.size + carList.size();
         if (newLength > array.length){
             array = grow(newLength);

@@ -1,7 +1,7 @@
 package ru.itsjava.collections.list.car_list;
 
 public class CarCatalog {
-    CarList<Car> carList = new CarList<>();
+    MyArrayList<Car> carList = new MyArrayList<>();
 
     public static void main(String[] args) {
         CarCatalog carCatalog = new CarCatalog();
@@ -20,8 +20,8 @@ public class CarCatalog {
         System.out.println("Car Catalog initialized:\n" + carList.toString());
     }
 
-    private CarList<Car> getRussianCarsCatalog() {
-        CarList<Car> russianCarList = new CarList<>();
+    private MyArrayList<Car> getRussianCarsCatalog() {
+        MyArrayList<Car> russianCarList = new MyArrayList<>();
         russianCarList.add(new Car("Lada Priora", 2018));
         russianCarList.add(new Car("Lada Priora", 2019));
         russianCarList.add(new Car("Vaz 2001", 1961));
