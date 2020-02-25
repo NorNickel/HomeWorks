@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list.linked_list;
+package ru.itsjava.collections.list.my_linked_list;
 
 public class Node<E> {
     private E item;

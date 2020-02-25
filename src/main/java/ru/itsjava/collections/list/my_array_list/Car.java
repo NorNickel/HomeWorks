@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list.array_list;
+package ru.itsjava.collections.list.my_array_list;
 
 public class Car implements Comparable<Car> {
 

@@ -1,4 +1,4 @@
-package ru.itsjava.collections.list.extra;
+package ru.itsjava.collections.list.array_list;
 
 public class Person {
     private static final String[] MERGE = {"Мужчина", "Женщина"};

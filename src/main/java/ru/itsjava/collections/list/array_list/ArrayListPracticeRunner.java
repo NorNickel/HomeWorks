@@ -1,9 +1,9 @@
-package ru.itsjava.collections.list.extra;
+package ru.itsjava.collections.list.array_list;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExtraPractice {
+public class ArrayListPracticeRunner {
 
     public static void main(String[] args){
         System.out.println("Дополнительные задачи по теме работа с ArrayList.");

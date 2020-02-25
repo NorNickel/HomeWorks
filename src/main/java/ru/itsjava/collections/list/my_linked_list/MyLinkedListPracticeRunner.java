@@ -1,9 +1,6 @@
-package ru.itsjava.collections.list.linked_list;
+package ru.itsjava.collections.list.my_linked_list;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
-public class MyLinkedListRunner {
+public class MyLinkedListPracticeRunner {
 
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList(null);

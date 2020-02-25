@@ -1,7 +1,4 @@
-package ru.itsjava.collections.list.linked_list;
-
-import java.util.*;
-import java.util.function.UnaryOperator;
+package ru.itsjava.collections.list.my_linked_list;
 
 // Homework: Create own class MyLinkedList with <generics>
 // and realize some methods
