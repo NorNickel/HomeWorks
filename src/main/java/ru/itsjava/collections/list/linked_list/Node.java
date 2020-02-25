@@ -1,19 +1,25 @@
 package ru.itsjava.collections.list.linked_list;
 
-public class Node {
-    private Object value;
-    private Node next;
+public class Node<E> {
+    private E item;
+    private Node<E> next;
+    private Node<E> prev;
 
-    public Node(Object value, Node next) {
-        this.value = value;
+    public Node(Node<E> prev, E element, Node<E> next) {
+        this.prev = prev;
+        this.item = element;
         this.next = next;
     }
 
-    public Object getValue() { return value; }
+    public E getItem() { return item; }
 
-    public void setValue(Object value) { this.value = value; }
+    public void setItem(E item) { this.item = item; }
 
-    public Node getNext() { return next; }
+    public Node<E> getNext() { return next; }
 
-    public void setNext(Node next) { this.next = next; }
+    public void setNext(Node<E> next) { this.next = next; }
+
+    public Node<E> getPrev() { return prev; }
+
+    public void setPrev(Node<E> prev) { this.prev = prev; }
 }
