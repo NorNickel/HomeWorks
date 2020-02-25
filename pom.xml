@@ -6,7 +6,7 @@
 
     <groupId>ru.itsjava</groupId>
     <artifactId>HomeWorks</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <properties>
         <maven_compiler.target>13</maven_compiler.target>
         <maven_compiler.target>13</maven_compiler.target>
