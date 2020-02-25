@@ -4,15 +4,32 @@ package ru.itsjava.collections.list.my_linked_list;
 // and realize some methods
 
 public class MyLinkedList<E> {
+
+    /*
+     * Fields
+     */
+
     private int size;
     private Node<E> first;
     private Node<E> last;
+
+
+    /*
+     * Constructor
+     */
 
     public MyLinkedList(Node<E> first){
         add(first);
     }
 
-    public int size() { return size; }
+
+    /*
+     * Methods
+     */
+
+    public int size() {
+        return size;
+    }
 
     public boolean isEmpty() {
         return size == 0;
@@ -71,8 +88,6 @@ public class MyLinkedList<E> {
         return getNode(index).getItem();
     }
 
-    // set element by index
-    // returns old element
     public E set(int index, E element) {
         Node<E> cur = getNode(index);
         E oldElement = cur.getItem();
@@ -146,7 +161,6 @@ public class MyLinkedList<E> {
         return result;
     }
 
-
     public Object[] toArray() {
         Object[] resArray = new Object[size];
         int i = 0;
@@ -156,7 +170,10 @@ public class MyLinkedList<E> {
         return resArray;
     }
 
-    // utility functions for link / unlink nodes
+
+    /*
+    * Utility functions for link / unlink nodes
+    */
 
     private void linkFirst(Node<E> node){
         node.setPrev(null);
@@ -217,7 +234,9 @@ public class MyLinkedList<E> {
     }
 
 
-    // override functions
+    /*
+     * Override functions
+     */
 
     @Override
     public String toString() {
@@ -230,7 +249,11 @@ public class MyLinkedList<E> {
     }
 
 
-    /* unrealized functions
+    /*
+     * Unrealized methods
+     */
+
+    /*
 
     public void replaceAll(UnaryOperator operator) {
 
