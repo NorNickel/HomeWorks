@@ -3,6 +3,8 @@ package ru.itsjava.collections.list.my_linked_list;
 // Homework: Create own class MyLinkedList with <generics>
 // and realize some methods
 
+import java.util.LinkedList;
+
 public class MyLinkedList<E> {
 
     /*
