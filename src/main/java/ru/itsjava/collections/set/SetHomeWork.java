@@ -1,4 +1,4 @@
-package ru.itsjava.collections.set.practice;
+package ru.itsjava.collections.set;
 
 // Домашнее задание по работе с коллекциями Set
 
