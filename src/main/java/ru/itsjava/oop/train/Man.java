@@ -1,6 +1,8 @@
 package ru.itsjava.oop.train;
 
-public class Man extends Person{
+import java.io.Serializable;
+
+public class Man extends Person implements Serializable {
 
     private double impactForce; // сила удара
     private Woman wife;

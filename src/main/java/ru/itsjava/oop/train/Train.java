@@ -1,8 +1,10 @@
 package ru.itsjava.oop.train;
 
+import java.io.*;
 import java.util.Arrays;
 
 public class Train {
+
     public static void main(String[] args) {
         // Create array with persons:
         // {Men: [0] - Michael, [1] - Ivan, [2] - Matthew, [3] - Archibald,
@@ -23,6 +25,33 @@ public class Train {
 
         // Man and woman matching
         matchPersons(peopleArray[1], peopleArray[7]); // match Ivan and Ashley
+
+        serializePeopleArray(peopleArray);
+
+        Person[] deserializedPeopleArray = deserializePeopleArray();
+        System.out.println(Arrays.toString(deserializedPeopleArray) + "\n");
+
+    }
+
+    public static void serializePeopleArray(Person[] peopleArray) {
+        File file = new File("src\\main\\java\\ru\\itsjava\\oop\\train\\peopleArray.out");
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(
+                new FileOutputStream(file))) {
+            outputStream.writeObject(peopleArray);
+        } catch (IOException e) {
+             e.printStackTrace();
+        }
+    }
+
+    public static Person[] deserializePeopleArray(){
+        File file = new File("src\\main\\java\\ru\\itsjava\\oop\\train\\peopleArray.out");
+        try (ObjectInputStream inputStream = new ObjectInputStream(
+                new FileInputStream(file))) {
+            return (Person[]) inputStream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return new Person[0];
     }
 
     public static Person[] getExamplePeopleArray(){

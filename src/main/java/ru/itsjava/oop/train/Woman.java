@@ -1,6 +1,8 @@
 package ru.itsjava.oop.train;
 
-public class Woman extends Person{
+import java.io.Serializable;
+
+public class Woman extends Person implements Serializable {
     private static final String[] HAIR_COLORS = new String[]
             {"blond", "brunette", "brown", "hairless"};
     public static final int HAIR_COLOR_BLOND = 0;
