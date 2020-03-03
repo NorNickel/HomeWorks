@@ -14,9 +14,9 @@ public class HomeWorkRunner {
 
     }
 
-    public static User deserializeUser() {
+    //public static User deserializeUser() {
 
-    }
+    //}
 
     public static class User {
         private String login;
