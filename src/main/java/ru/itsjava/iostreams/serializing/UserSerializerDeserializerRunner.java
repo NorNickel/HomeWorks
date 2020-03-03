@@ -19,21 +19,20 @@ public class UserSerializerDeserializerRunner {
         // 1. Сериализация / десериализация объекта User
         User user = new User("Andrey", "12345");
         System.out.println("user = " + user);
+
         serializeUser(user);
+
         User deserializedUser = deserializeUser();
-        if (deserializedUser != null) {
-            System.out.println("deserializedUser = " + deserializedUser);
-        }
+        System.out.println("deserializedUser = " + deserializedUser);
     }
 
-    public static boolean serializeUser(User user) {
+    public static void serializeUser(User user) {
         try {
             serializeUser(user, Paths.get(FILE_NAME_FOR_SERIALIZE_USER));
         } catch (IOException e) {
-            e.printStackTrace();
-            return false;
+            System.out.println("Невозможно сериализовать объект User");
+            System.exit(-1);
         }
-        return true;
     }
 
     private static void serializeUser (User user, Path file) throws IOException {
@@ -54,13 +53,13 @@ public class UserSerializerDeserializerRunner {
             return deserializeUser(Paths.get(FILE_NAME_FOR_SERIALIZE_USER));
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Невозможно десериализовать объект User");
-            e.printStackTrace();
             return null;
         }
     }
 
     private static User deserializeUser(Path file) throws IOException, ClassNotFoundException {
         if (!Files.exists(file)) {
+            System.out.println("Не найден файл: " + file.getFileName());
             return null;
         }
         try (ObjectInputStream inputStream = new ObjectInputStream(Files.newInputStream(file))) {
