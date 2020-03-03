@@ -1,4 +1,4 @@
-package ru.itsjava.iostreams;
+package ru.itsjava.iostreams.practice;
 
 import java.io.*;
 import java.util.ArrayList;
