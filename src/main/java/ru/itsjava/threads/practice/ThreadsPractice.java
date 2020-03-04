@@ -17,5 +17,27 @@ public class ThreadsPractice {
         System.out.println("End");
          */
         Thread.currentThread().join(); // dead lock
+
+        // анонимный класс
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Test");
+            }
+        };
+        Thread t = new Thread(runnable);
+        t.start();
+
+        Thread t2 = new Thread(() -> {
+            System.out.println("Yo!");
+            System.out.println("!!!");
+        });
+        t2.start();
+
+
+        new Thread(() -> {
+            System.out.println("Yo!");
+            System.out.println("!!!");
+        }).start();
     }
 }
