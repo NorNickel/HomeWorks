@@ -1,4 +1,4 @@
-package ru.itsjava.enums;
+package ru.itsjava.enums.practice;
 
 public enum Colors {
     RED("#1"), GREEN("#2"), BLUE("#3");

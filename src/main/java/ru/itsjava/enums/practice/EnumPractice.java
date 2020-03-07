@@ -1,4 +1,4 @@
-package ru.itsjava.enums;
+package ru.itsjava.enums.practice;
 
 import java.util.Arrays;
 

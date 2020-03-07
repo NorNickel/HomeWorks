@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class SwapDataTwoFiles {
 
     private static final String PATH_FILE_A =
-            "src/main/java/ru/itsjava/iostreams/swap_data_two_files/fileA.txt";
+            "src/main/resources/fileA.txt";
     private static final String PATH_FILE_B =
-            "src/main/java/ru/itsjava/iostreams/swap_data_two_files/fileB.txt";
+            "src/main/resources/fileB.txt";
 
     public static void main(String[] args)
     {
@@ -40,10 +40,8 @@ public class SwapDataTwoFiles {
             throws IOException
     {
         try (PrintWriter writer = new PrintWriter( fileName)) {
-            int size = strings.size();
-            for (int i = 0; i < size; i++) {
-                writer.print(strings.get(i)
-                        + (i != size - 1 ? "\n" : ""));
+            for (String string : strings) {
+                writer.println(string);
             }
         }
     }

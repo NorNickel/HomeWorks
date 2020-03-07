@@ -1,6 +1,4 @@
-package ru.itsjava.enums;
-
-import java.util.Set;
+package ru.itsjava.enums.movies;
 
 public class Movie {
     private String name;
@@ -19,16 +17,12 @@ public class Movie {
 
     public void setGenre(Genre genre) { this.genre = genre; }
 
-    public static void main(String[] args) {
-        Movie movie = new Movie("Terminator", Genre.FANTASTIC);
-        System.out.println(movie);
-    }
-
     @Override
     public String toString() {
         return "Movie{" +
-                "name='" + name + '\'' +
-                ", genre=" + genre +
+                '\'' + name + '\'' +
+                ", " + genre.getName() +
+                ", " + genre.getRatingDescription() +
                 '}';
     }
 }

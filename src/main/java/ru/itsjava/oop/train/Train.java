@@ -44,7 +44,7 @@ public class Train {
     }
 
     public static Person[] deserializePeopleArray(){
-        File file = new File("src\\main\\java\\ru\\itsjava\\oop\\train\\peopleArray.out");
+        File file = new File("src\\main\\resources\\peopleArray.out");
         try (ObjectInputStream inputStream = new ObjectInputStream(
                 new FileInputStream(file))) {
             return (Person[]) inputStream.readObject();
