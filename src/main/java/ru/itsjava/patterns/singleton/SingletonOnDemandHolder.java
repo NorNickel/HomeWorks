@@ -1,4 +1,4 @@
-package ru.itsjava.patterns.singleton.inner_class;
+package ru.itsjava.patterns.singleton;
 /*
 * Реализация Singleton с использованием внутреннего класса
 * ("On Demand Holder")
@@ -12,17 +12,17 @@ package ru.itsjava.patterns.singleton.inner_class;
 * Используется тогда, когда конструктор класса не вызывает опасений создания исключительных ситуаций
  */
 
-public class Singleton {
+public class SingletonOnDemandHolder {
     // #1. Объявляем приватным конструктор класса:
-    private Singleton() {};
+    private SingletonOnDemandHolder() {};
 
     // #2. Объявляем внутренний статический класс с "константой" - новым объектом Singleton
     private static class SingletonHolder {
-        private final static Singleton instance = new Singleton();
+        private final static SingletonOnDemandHolder instance = new SingletonOnDemandHolder();
     }
 
     // #3. Объявляем статический создающий метод, который будет использоваться для получения одиночки:
-    public static Singleton getInstance() {
+    public static SingletonOnDemandHolder getInstance() {
         return SingletonHolder.instance;
     }
 }

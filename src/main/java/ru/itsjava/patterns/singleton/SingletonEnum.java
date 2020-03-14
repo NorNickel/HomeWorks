@@ -1,4 +1,4 @@
-package ru.itsjava.patterns.singleton.with_enum;
+package ru.itsjava.patterns.singleton;
 /*
 * Реализация Singleton в виде enum
 *
@@ -8,6 +8,6 @@ package ru.itsjava.patterns.singleton.with_enum;
 * - Не ленивая инициализация
  */
 
-public enum Singleton {
+public enum SingletonEnum {
     INSTANCE;
 }

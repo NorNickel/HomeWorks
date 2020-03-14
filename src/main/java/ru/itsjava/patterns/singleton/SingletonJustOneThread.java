@@ -1,25 +1,23 @@
-package ru.itsjava.patterns.singleton.lazy;
+package ru.itsjava.patterns.singleton;
 /*
-* Реализация Singleton с "ленивой" инициализацией
+* Реализация Singleton с "ленивой" инициализацией для однопоточных приложений
 *
 * + Ленивая инициализация
 * - Потокобезопасность
-*
-* Решение подходит исключительно для однопоточных приложений.
  */
 
-public class Singleton {
+public class SingletonJustOneThread {
 
     // #1. Добавляем в класс приватное статическое поле, содержащее одиночный объект:
-    private static Singleton instance;
+    private static SingletonJustOneThread instance;
 
     // #2. Объявляем приватным конструктор класса:
-    private Singleton() {};
+    private SingletonJustOneThread() {};
 
     // #3. Объявляем статический создающий метод, который будет использоваться для получения одиночки:
-    public static Singleton getInstance() {
+    public static SingletonJustOneThread getInstance() {
         if (instance == null) {
-            instance = new Singleton();
+            instance = new SingletonJustOneThread();
         }
         return instance;
     }

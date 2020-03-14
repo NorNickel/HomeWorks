@@ -1,22 +1,22 @@
-package ru.itsjava.patterns.singleton.static_field;
+package ru.itsjava.patterns.singleton;
 /*
-* Реализация Singleton с созданием объекта при статической инициализации класса
+* Реализация Singleton со статическим полем с объектом
 *
 * + Потокобезопасность
 * - Не ленивая инициализация
 * - Обработка исключений в конструкторе
  */
 
-public class Singleton {
+public class SingletonStaticField {
     // #1. Добавляем в класс приватное статическое поле,
     // содержащее одиночный объект, и сразу его создаем:
-    private static Singleton instance = new Singleton();
+    private static SingletonStaticField instance = new SingletonStaticField();
 
     // #2. Объявляем приватным конструктор класса:
-    private Singleton() {};
+    private SingletonStaticField() {};
 
     // #3. Объявляем статический создающий метод, который будет использоваться для получения одиночки:
-    public static Singleton getInstance() {
+    public static SingletonStaticField getInstance() {
         return instance;
     }
 }
