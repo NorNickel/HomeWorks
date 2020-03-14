@@ -7,21 +7,29 @@ import java.util.Date;
 public class MergeSort {
 
     public static void main(String[] args) throws InterruptedException {
-        int[] numberArray1 = createNumberArray(10_000_000);
-        int[] numberArray2 = createNumberArray(10_000_000);
-        int[] numberArray3 = createNumberArray(10_000_000);
+        int[] numberArray1 = createNumberArray(3);
+        int[] numberArray2 = createNumberArray(3);
+        int[] numberArray3 = createNumberArray(3);
+
+        System.out.println(Arrays.toString(numberArray1));
+        System.out.println(Arrays.toString(numberArray2));
+        System.out.println(Arrays.toString(numberArray3));
 
         Date dateStart = new Date();
 
         Thread[] threads = new Thread[3];
-        threads[0] = sortArrayNewThread(numberArray1);
-        threads[1] = sortArrayNewThread(numberArray2);
-        threads[2] = sortArrayNewThread(numberArray3);
+        threads[0] = new Thread(new SortArray(numberArray1));
+        threads[0].start();
+        threads[0].join();
+        System.out.println(Arrays.toString(numberArray1));
 
-        for (Thread thread : threads) {
-            thread.join();
-        }
+        //for (Thread thread : threads) {
+        //    thread.join();
+        //}
 
+        System.out.println(Arrays.toString(numberArray1));
+        System.out.println(Arrays.toString(numberArray2));
+        System.out.println(Arrays.toString(numberArray3));
 /*
         numberArray1 = sortArray(numberArray1);
         numberArray2 = sortArray(numberArray2);
@@ -42,11 +50,10 @@ public class MergeSort {
         return numberArray;
     }
 
-    public static Thread sortArrayNewThread(int[] arrayA) throws InterruptedException {
-        class Array implements Runnable {
+    static class SortArray implements Runnable {
             private int[] array;
 
-            public Array(int[] array) {
+            public SortArray(int[] array) {
                 this.array = array;
             }
 
@@ -56,15 +63,10 @@ public class MergeSort {
             public void run() {
                 array = sortArray(array);
             }
-        }
-        Array a = new Array(arrayA);
-        arrayA = a.getArray();
-        Thread newThread = new Thread(a);
-        newThread.start();
-        return newThread;
     }
 
     public static int [] sortArray(int[] arrayA){ // сортировка Массива который передается в функцию
+        System.out.println("sortArray()");
         // проверяем не нулевой ли он?
         if (arrayA == null) {
             return null;
